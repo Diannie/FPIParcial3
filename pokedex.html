@@ -18,15 +18,21 @@
           <input class="inputHeader" type="text" placeholder="Search..."/>
         </div>
           <ul class="topnav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Sign up</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Profile</a></li>
             <li><a href="#">Logout</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign up</a></li>
+            <li class="active"><a href="#">Home</a></li>
           </ul>
       </div>
 
       <div class="cuerpo">
+
+
+
+
+
+
 
         <div class="sinBusqueda">
           <h1 class="tituloCuerpo">Find your favorite pokemons</h1>
@@ -34,38 +40,34 @@
         </div>
 
         <div class="busqueda">
-
+          <div class="shaped">
           <div class="areaImagen">
-            <img id="imagen" src=""/>
+            <img id="imagen" alt="imagen del pokemon" src="img/default.png"/>
             <div class="favorito">
+              <img src="img/estrella.png" alt="estrella"/>
             </div>
           </div>
-
           <div class="areaDatos">
-            <label>Name:</label>
+            <label>Name:</label><label id="nombrePokemon">Nombre del pokemon</label>
             <br>
-            <label>Type:</label>
+            <label>Type:</label><label id="tipoPokemon">Tipo del pokemon</label>
             <br>
-            <label>Where to find it:</label>
-          </div>
-
-          <div class="areaHabilidades">
-            <label>Abilities:</label>
-            <ul class="habilidades">
-              <li>Habilidad 1</li>
-              <li>Habilidad 2</li>
-              <li>Habilidad 3</li>
-              <li>Habilidad 4</li>
-
-            </ul>
-          </div>
-
-          <div class="areaEvoluciones">
+            <label>Where to find it:</label><label id="lugarPokemon">Ubicacion del pokemon</label>
           </div>
         </div>
-
+        <div class="areaHabilidades">
+          <label>Abilities:</label>
+          <ul class="habilidades">
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+            <li>Habilidad 4</li>
+          </ul>
+        </div>
+        <div class="areaEvoluciones">
+        </div>
       </div>
-
     </div>
+  </div>
 </body>
 </html>

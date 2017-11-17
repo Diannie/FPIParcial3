@@ -1,6 +1,28 @@
 body {
   background-image: url("../img/fondo.jpg");
 }
+
+.shaped{
+    width:100%;
+    background: black url("../img/fondoGris.png") center top no-repeat;
+    background-size:cover;
+    clip-path: polygon(0 0, 20% 0, 24% 8%, 100% 10%, 100% 60%, 24% 62%, 20% 52%, 0 52%);
+}
+.areaDatos{
+  width:50%;
+  float: right;
+  padding: 1.5vw 3vw;
+  background-color: #333;
+}
+.areaImagen{
+  width:50%;
+  float: left;
+  padding: 1.5vw 3vw;
+}
+.areaHabilidades{
+  padding: 1.5vw 3vw;
+  background-color: #333;
+}
 /*////////////////////////////Para el menu superior///////////////////////////*/
 .header{
   width: 100%;
