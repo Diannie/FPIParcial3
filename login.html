@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html >
-<head>
-  <meta charset="UTF-8">
-  <title>Pokédex Login</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/awesome-font.css">
-  <link rel="stylesheet" href="css/style-login.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pokédex Login</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/awesome-font.css">
+    <link rel="stylesheet" href="css/style-login.css">
+  </head>
 
-<body>
-  <div id="clouds">
-	<div class="cloud x1"></div>
-	<div class="cloud x2"></div>
-	<div class="cloud x3"></div>
-	<div class="cloud x4"></div>
-	<div class="cloud x5"></div>
-</div>
+  <body onload="CargarSignin()">
+    <div id="clouds">
+    	<div class="cloud x1"></div>
+    	<div class="cloud x2"></div>
+    	<div class="cloud x3"></div>
+    	<div class="cloud x4"></div>
+    	<div class="cloud x5"></div>
+    </div>
 
- <div class="container">
-   <h1>Sign in to profile</h1>
-      <div id="login">
-
+    <div id="signin" class="container">
+      <h1>Sign in to profile</h1>
+        <div id="login">
         <form method="post">
-
           <fieldset class="clearfix">
-            <p><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p>
-            <p><span class="fontawesome-lock"></span><input type="password"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p>
+            <p><span class="fontawesome-user"></span><input type="text" placeholder="Username" required></p>
+            <p><span class="fontawesome-lock"></span><input type="password" placeholder="Password" required></p>
             <p><input type="submit" value="Sign in"></p>
           </fieldset>
-
         </form>
         <br>
-        <p>You agree to our terms of service and privacy policy.<a href="#" class="blue">FPI 2017</a><span class="fontawesome-arrow-right"></span></p>
-
+        <p>You don't have an acount? <a href="#" class="blue" onclick="CargarSignup()">Join us.</a><span class="fontawesome-arrow-right"></span></p>
       </div>
-
+    </div>
+    <div id="signup" class="container">
+      <h1>Sign up to Pokedex</h1>
+        <div id="login">
+        <form method="post">
+          <fieldset class="clearfix">
+            <p><span class="fontawesome-user"></span><input type="text" placeholder="Name" required></p>
+            <p><span class="fontawesome-user"></span><input type="text" placeholder="Username" required></p>
+            <p><span class="fontawesome-lock"></span><input type="password" placeholder="Password" required></p>
+            <p><input type="submit" value="Sign up"></p>
+          </fieldset>
+        </form>
+        <br>
+        <p>You agree to our terms of service and privacy policy.<a class="blue">FPI 2017</a><span class="fontawesome-arrow-right"></span></p>
+      </div>
     </div>
     <div class="bottom"> <h3><a href="#">Save your favorite pokemons!</a></h3></div>
-
-
-</body>
+    <script type="text/javascript" src="js/login.js"></script>
+  </body>
 </html>
