@@ -33,27 +33,43 @@
     <div class="busqueda">
       <div class="shaped">
         <div class="areaImagen">
-          <img id="imagen" alt="imagen del pokemon" src="img/default.png"/>
-          <div class="favorito">
+          <img id="imagen" class="imagen" alt="imagen del pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"/>
+          <!--<div class="favorito">
             <img src="img/estrella.png" alt="estrella"/>
           </div>
+          -->
         </div>
         <div class="areaDatos">
-          <label>Name:</label><label id="nombrePokemon">Nombre del pokemon</label>
-          <br>
-          <label>Type:</label><label id="tipoPokemon">Tipo del pokemon</label>
-          <br>
-          <label>Where to find it:</label><label id="lugarPokemon">Ubicacion del pokemon</label>
+          <table class="table-fill">
+            <tr>
+              <td class="table-text-left">ID</td>
+              <td class="table-text">IdPokemon</td>
+            </tr>
+            <tr>
+              <td class="table-text-left">Name</td>
+              <td class="table-text">nombrePokemon</td>
+            </tr>
+            <tr>
+              <td class="table-text-left">Type</td>
+              <td class="table-text">Tipo pokemon</td>
+            </tr>
+            <tr>
+              <td class="table-text-left">Where it lives</td>
+              <td class="table-text">Ubicacion del pokemon</td>
+            </tr>
+          </table>
         </div>
       </div>
-      <div class="areaHabilidades">
-        <label>Abilities:</label>
-        <ul class="habilidades">
-          <li>Habilidad 1</li>
-          <li>Habilidad 2</li>
-          <li>Habilidad 3</li>
-          <li>Habilidad 4</li>
-        </ul>
+      <div class="shaped-abilities">
+        <div class="areaHabilidades">
+          <h1>Abilities:</h1>
+          <ul class="habilidades">
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+            <li>Habilidad 4</li>
+          </ul>
+        </div>
       </div>
       <div class="areaEvoluciones">
       </div>

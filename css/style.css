@@ -9,7 +9,7 @@ body {
 .header{
   width: 100%;
   height: 96px;
-  background-color: #333;
+  background-color: #454545;
 }
 .inputHeader{
   width: 30%;
@@ -68,22 +68,73 @@ ul.topnav li a.active {
 
 .shaped{
     width:100%;
-    background: black url("../img/fondoGris.png") center top no-repeat;
+    height: 352px;
+    background-color: #818181;
     background-size:cover;
-    clip-path: polygon(0 0, 20% 0, 24% 8%, 100% 10%, 100% 60%, 24% 62%, 20% 52%, 0 52%);
+    clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 90%, 25% 90%, 20% 80%, 0 80%);
 }
 .areaDatos{
-  width:50%;
+  position: relative;
+  width: 60%;
+  height: auto;
+  top: -70%;
   float: right;
-  padding: 1.5vw 3vw;
+  right: 4%;
   background-color: #333;
+  font-family: 'Barlow Condensed', serif;
 }
 .areaImagen{
-  width:50%;
-  float: left;
-  padding: 1.5vw 3vw;
+  width: 192px;
+  height: auto;
+  text-align: center;
+}
+.imagen{
+  width: 150%;
+  height: 150%;
 }
 .areaHabilidades{
-  padding: 1.5vw 3vw;
-  background-color: #333;
+  
+}
+.shaped-abilities{
+    width:100%;
+    height: 256px;
+    background-color: #454545;
+    background-size:cover;
+    clip-path: polygon(21% 0, 23% 14%, 100% 14%, 100% 71%, 0 71%, 0 0);
+}
+
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 100%;
+  margin: auto;
+  width: 100%;
+  animation: float 5s infinite;
+}
+.table-text-left{
+  background: #4E5066;
+  color: white;
+  padding-left: 0px;
+  padding-right: 20px;
+  text-align:right;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  border: 2px solid #4CAF50;
+}
+.table-text{
+  background: #FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border: 2px solid #4CAF50;
+}
+.table-text:hover{
+  color: white;
+  background:#4E5066;
 }
