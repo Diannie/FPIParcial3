@@ -1,4 +1,37 @@
 body {
   background-image: url("../img/fondo.jpg");
-  background-size: 64px 64px;
+}
+/*////////////////////////////Para el menu superior///////////////////////////*/
+.header{
+  width: 100%;
+  overflow: hidden;
+  padding: 1.5vw 3vw;
+  text-decoration: none;
+  background-color: #333;
+}
+.contenidoHeader{
+  width: 40%;
+  float: left;
+  color: white;
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+ul.topnav li {float: right;}
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1.5vw 3vw;
+    text-decoration: none;
+}
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+ul.topnav li a.active {
+  background-color: #75A8BD;
 }
