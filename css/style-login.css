@@ -258,3 +258,18 @@ p {
 .blue {
   color:#09c;
 }
+
+
+
+.pokeFavoritos{
+  font-size: 32px;
+  color: black;
+  font-family: 'Barlow Condensed', serif;
+  background-color: #888888;
+  height: 200px;
+  width: 100%;
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+}
