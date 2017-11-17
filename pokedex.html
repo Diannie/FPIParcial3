@@ -2,40 +2,70 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>POKÉDEX</title>
+  <title>POKEDEX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel=icon href=img/favicon.png type="image/png">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel='stylesheet' href='css/bootstrap.min.css'>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="container">
-          <div class="masthead clearfix">
-            <div class="container inner">
-              <h3 class="masthead-brand">Pokédex</h3>
-              <br>
-              <input class="masthead-brand" type="text" placeholder="Search..."/>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Login</a></li>
-                  <li><a href="#">Profile</a></li>
-                </ul>
-              </nav>
+    <div class="contenedorPrincipal">
+
+      <div class="header">
+        <div class="contenidoHeader">
+          <label class="tituloHeader">Pokédex</label>
+          <input class="inputHeader fontawesome-user" type="text" placeholder="Search..."/>
+        </div>
+        <nav>
+          <ul class="topNav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Sign up</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="cuerpo">
+
+        <div class="sinBusqueda">
+          <h1 class="tituloCuerpo">Find your favorite pokemons</h1>
+            <p class="textoCuerpo">Escribir algo shido aqui en el cuerpo jejejejejejejejejeje</p>
+        </div>
+
+        <div class="busqueda">
+
+          <div class="areaImagen">
+            <img id="imagen" src=""/>
+            <div class="favorito">
             </div>
           </div>
-          <div class="inner cover">
-            <h1 class="cover-heading">Find your favorite pokemons</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
+
+          <div class="areaDatos">
+            <label>Name:</label>
+            <br>
+            <label>Type:</label>
+            <br>
+            <label>Where to find it:</label>
+          </div>
+
+          <div class="areaHabilidades">
+            <label>Abilities:</label>
+            <ul class="habilidades">
+              <li>Habilidad 1</li>
+              <li>Habilidad 2</li>
+              <li>Habilidad 3</li>
+              <li>Habilidad 4</li>
+
+            </ul>
+          </div>
+
+          <div class="areaEvoluciones">
           </div>
         </div>
+
       </div>
+
     </div>
 </body>
 </html>
