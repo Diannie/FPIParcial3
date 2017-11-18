@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/Barlow+Condensed.css">
 </head>
-<body>
+<body onload="CapturarPokemons()">
   <div class="header">
     <div class="contenidoHeader">
       <label class="tituloHeader">Pokedex</label>
-      <input class="inputHeader" type="text" placeholder="Search..."/>
+      <input class="inputHeader" list="pokemons" type="text" placeholder="Search..."/>
+      <datalist id="pokemons">
+      </datalist>
     </div>
     <div class="divNav">
       <ul class="topnav">
@@ -28,6 +30,6 @@
   <div class="pokeFavoritos">
     <label>No favorites yet</label>
   </div>
-
+<script type="text/javascript" src="js/buscador.js"></script>
 </body>
 </html>
