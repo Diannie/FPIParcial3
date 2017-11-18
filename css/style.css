@@ -4,7 +4,7 @@ body {
 /*////////////////////////////Para el menu superior///////////////////////////*/
 .tituloHeader{
   font-size: 32px;
-  font-family: 'Barlow Condensed', serif;
+
 }
 .header{
   width: 100%;
@@ -67,40 +67,53 @@ ul.topnav li a.active {
 }
 
 .shaped{
-    width:100%;
-    height: 352px;
-    background-color: #818181;
-    background-size:cover;
-    clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 90%, 25% 90%, 20% 80%, 0 80%);
+  position: absolute;
+  width:100%;
+  height: 352px;
+  background-color: #818181;
+  background-size:cover;
+  clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 90%, 25% 90%, 20% 80%, 0 80%);
 }
 .areaDatos{
-  position: relative;
+  position: absolute;
   width: 60%;
   height: auto;
-  top: -70%;
   float: right;
   right: 4%;
+  top: 15%;
   background-color: #333;
-  font-family: 'Barlow Condensed', serif;
 }
 .areaImagen{
-  width: 192px;
+  position: absolute;
+  width: 25%;
   height: auto;
-  text-align: center;
+  top: -10%;
+  left: -5%;
 }
 .imagen{
+  padding-left: 5vw;
   width: 150%;
   height: 150%;
+  max-width: 312px;
+  max-height: 312px;
+}
+.titulo-habilidades{
+  font-size: 36px;
+  text-align: left;
 }
 .areaHabilidades{
-
+  text-align: center;
+  color: white;
+  font-family: 'Fredericka the Great', cursive;
 }
 .shaped-abilities{
-    width:100%;
-    height: 256px;
-    background-color: #454545;
-    background-size:cover;
-    clip-path: polygon(21% 0, 23% 14%, 100% 14%, 100% 71%, 0 71%, 0 0);
+  position: absolute;
+  top: 75%;
+  width:100%;
+  height: 256px;
+  background-color: #454545;
+  background-size:cover;
+  clip-path: polygon(21% 0, 23% 14%, 100% 14%, 100% 71%, 0 71%, 0 0);
 }
 
 
@@ -112,6 +125,7 @@ ul.topnav li a.active {
   margin: auto;
   width: 100%;
   animation: float 5s infinite;
+  font-family: 'Press Start 2P', cursive;
 }
 .table-text-left{
   background: #4E5066;
@@ -137,4 +151,18 @@ ul.topnav li a.active {
 .table-text:hover{
   color: white;
   background:#4E5066;
+}
+.pokeball-div{
+  position: absolute;
+  width: 25%;
+  top: 25%;
+  height: auto;
+}
+.pokeball-img{
+  padding-left: 25px;
+  transform: rotate(-45deg);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  max-width: 512px;
+  max-height: 512px;
 }
