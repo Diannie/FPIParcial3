@@ -100,20 +100,20 @@ ul.topnav li a.active {
 .titulo-habilidades{
   font-size: 36px;
   text-align: left;
+  font-family: 'Fredericka the Great', cursive;
+  color: white;
 }
 .areaHabilidades{
   text-align: center;
-  color: white;
-  font-family: 'Fredericka the Great', cursive;
 }
 .shaped-abilities{
   position: absolute;
   top: 75%;
   width:100%;
   height: 256px;
-  background-color: #454545;
+  background-image: url(../img/abilities2.png);
   background-size:cover;
-  clip-path: polygon(21% 0, 23% 14%, 100% 14%, 100% 71%, 0 71%, 0 0);
+  clip-path: polygon(20% 0, 25% 12.5%, 100% 12.5%, 100% 100%, 0 100%, 0 0);
 }
 
 
@@ -165,4 +165,49 @@ ul.topnav li a.active {
   filter: alpha(opacity=50);
   max-width: 512px;
   max-height: 512px;
+}
+.nav-abilities{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.nav-abilities-li{
+  float: left;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  padding: 32px;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  border: 1px solid black;
+  background-color:rgba(12, 129, 128, 0.75);
+  border-radius: 8px;
+}
+.nav-abilities-li:hover {
+  background-color: #111111;
+}
+.areaEvoluciones{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 125%;
+  background-color: #505050;
+}
+.header-evoluciones{
+  position: absolute;
+  width: 100%;
+  top: 120%;
+  background-color: #505050;
+  clip-path: polygon(100% 0%, 80% 0%, 75% 100%, 100% 100%);
+}
+.titulo-evoluciones{
+  font-size: 36px;
+  text-align: right;
+  color: white;
+  font-family: 'Fredericka the Great', cursive;
+}
+.div-pokemon-evolucion{
+  width: 100%;
+  height: 256px;
 }
