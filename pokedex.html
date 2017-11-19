@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/Press+Start+2P.css">
   <link rel="stylesheet" href="css/Fredericka+the+Great.css">
 </head>
-<body>
+<body >
   <div class="header">
     <div class="contenidoHeader">
       <label class="tituloHeader">Pokedex</label>
@@ -28,12 +28,12 @@
     </div>
   </div>
   <div class="cuerpo">
-    <div class="sinBusqueda">
+    <div class="sinBusqueda" id="sinBusqueda">
       <h1 class="tituloCuerpo">Find your favorite pokemons</h1>
       <p class="textoCuerpo">Escribir algo shido aqui en el cuerpo jejejejejejejejejeje</p>
 
     </div>
-    <div class="div-busqueda">
+    <div class="div-busqueda" id="busqueda">
       <div class="shaped">
         <div class="pokeball-div">
           <img class="pokeball-img" src="img/pokeball.png" alt="estrella"/>
@@ -70,15 +70,12 @@
       </div>
       <div class="div-abilities">
         <div class="areaHabilidades">
-          <ul class="nav-abilities">
-            <li class="nav-abilities-li" id="pokeHabilidad1">razor-wind</li>
-            <li class="nav-abilities-li">swords-dance</li>
-            <li class="nav-abilities-li">cut</li>
-            <li class="nav-abilities-li">bind</li>
+          <ul class="nav-abilities" id="listaMovs">
+            <!--creadas con appendChild-->
           </ul>
         </div>
         <div class="areaDescription">
-          <p class="pokemon-description-parrafo">Texto que describe el pokemon</p>
+          <p class="pokemon-description-parrafo" id="pokeDescripcion">Texto que describe el pokemon</p>
         </div>
       </div>
 
@@ -87,29 +84,37 @@
         <h1 class="titulo-evoluciones">Evolutions:</h1>
       </div>
       <div class="areaEvoluciones">
+
         <div class="div-pokemon-evolucion">
           <div class="div-pokemon-evolucion-img">
             <img class="img-pokemon-evolucion-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="">
           </div>
           <div class="div-pokemon-evolucion-name">
-            <h1 class="titulo-pokemon-evolucion">nombre pokemon evolucionado</h1>
+            <h1 class="titulo-pokemon-evolucion" id="pokeEvolucion1">nombre pokemon evolucionado</h1>
           </div>
         </div>
+
         <div class="div-pokemon-evolucion">
           <div class="div-pokemon-evolucion-img">
             <img class="img-pokemon-evolucion-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" alt="">
           </div>
           <div class="div-pokemon-evolucion-name">
-              <h1 class="titulo-pokemon-evolucion">nombre pokemon evolucionado</h1>
+              <h1 class="titulo-pokemon-evolucion" id="pokeEvolucion2"></h1>
+          </div>
+        </div>
+
+        <div class="div-pokemon-evolucion">
+          <div class="div-pokemon-evolucion-img">
+            <img class="img-pokemon-evolucion-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" alt="">
+          </div>
+          <div class="div-pokemon-evolucion-name">
+              <h1 class="titulo-pokemon-evolucion" id="pokeEvolucion3"></h1>
           </div>
         </div>
 
       </div>
     </div>
-
   </div>
-
-<script type="text/javascript" src="js/buscador.js"></script>
 <script type="text/javascript" src="js/pokedex.js"></script>
 </body>
 </html>
