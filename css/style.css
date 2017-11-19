@@ -3,12 +3,12 @@ body {
 }
 /*////////////////////////////Para el menu superior///////////////////////////*/
 .tituloHeader{
-  font-size: 32px;
-
+  font-size: 4vw;
 }
 .header{
   width: 100%;
-  height: 96px;
+  height: auto;
+  min-height: 100px;
   background-color: #454545;
 }
 .inputHeader{
@@ -65,64 +65,116 @@ ul.topnav li a:hover:not(.active) {
 ul.topnav li a.active {
   background-color: #75A8BD;
 }
-
+.cuerpo{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.div-SinBusqueda{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.div-busqueda{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
 .shaped{
-  position: absolute;
+  position: relative;
   width:100%;
-  height: 352px;
+  height: auto;
+  min-height: 352px;
   background-color: #818181;
   background-size:cover;
-  clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 90%, 25% 90%, 20% 80%, 0 80%);
+  clip-path: polygon(0 0, 20% 0, 25% 10%, 100% 10%, 100% 100%, 25% 100%, 20% 90%, 0 90%);
 }
-.areaDatos{
-  position: absolute;
-  width: 60%;
-  height: auto;
-  float: right;
-  right: 4%;
-  top: 15%;
-  background-color: #333;
-}
-.areaImagen{
+.pokeball-div{
   position: absolute;
   width: 25%;
+  top: 25%;
   height: auto;
-  top: -10%;
-  left: -5%;
 }
-.imagen{
-  padding-left: 5vw;
-  width: 150%;
-  height: 150%;
+.areaImagen{
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  height: auto;
   max-width: 312px;
   max-height: 312px;
 }
+.imagen{
+  width: 120%;
+  height: 120%;
+
+  max-width: 312px;
+  max-height: 312px;
+}
+.areaDatos{
+  position: relative;
+  display: inline-block;
+  width: 65%;
+  height: auto;
+  background-color: #333;
+}
+
 .titulo-habilidades{
-  font-size: 36px;
+  font-size: 4vw;
   text-align: left;
   font-family: 'Fredericka the Great', cursive;
   color: white;
 }
 .areaHabilidades{
-  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  height: auto;
+  min-height: 256px;
 }
-.shaped-abilities{
-  position: absolute;
-  top: 75%;
-  width:100%;
+.areaDescription{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 50%;
   height: 256px;
+}
+.pokemon-description-parrafo{
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  color: black;
+  padding: 5px;
+  background-color: white;
+}
+.header-abilities{
+  position: relative;
+  display: inline-block;
+  width:50%;
+  height: auto;
   background-image: url(../img/abilities2.png);
   background-size:cover;
-  clip-path: polygon(20% 0, 25% 12.5%, 100% 12.5%, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(0 0, 40% 0%, 50% 100%, 0 100%);
 }
-
-
+.header-description{
+  position: relative;
+  display: inline-block;
+  width:49%;
+  height: auto;
+  background-image: url(../img/abilities2.png);
+  background-size:cover;
+  clip-path: polygon(0 0, 40% 0%, 50% 100%, 0 100%);
+}
+.div-abilities{
+  position: relative;
+  width:100%;
+  height: auto;
+  min-height: 128px;
+  background-image: url(../img/abilities2.png);
+}
 .table-fill {
   background: white;
   border-radius:3px;
   border-collapse: collapse;
   height: 100%;
-  margin: auto;
   width: 100%;
   animation: float 5s infinite;
   font-family: 'Press Start 2P', cursive;
@@ -152,12 +204,7 @@ ul.topnav li a.active {
   color: white;
   background:#4E5066;
 }
-.pokeball-div{
-  position: absolute;
-  width: 25%;
-  top: 25%;
-  height: auto;
-}
+
 .pokeball-img{
   padding-left: 25px;
   transform: rotate(-45deg);
@@ -167,47 +214,72 @@ ul.topnav li a.active {
   max-height: 512px;
 }
 .nav-abilities{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+
 }
 .nav-abilities-li{
+  margin-top: 5px;
+  margin-right: 5px;
   float: left;
   color: white;
   text-align: center;
   font-size: 18px;
   padding: 32px;
-  text-decoration: none;
+
   font-family: 'Press Start 2P', cursive;
   border: 1px solid black;
   background-color:rgba(12, 129, 128, 0.75);
-  border-radius: 8px;
+
 }
 .nav-abilities-li:hover {
   background-color: #111111;
 }
-.areaEvoluciones{
-  position: absolute;
-  width: 100%;
-  height: auto;
-  top: 125%;
-  background-color: #505050;
-}
 .header-evoluciones{
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 120%;
   background-color: #505050;
   clip-path: polygon(100% 0%, 80% 0%, 75% 100%, 100% 100%);
 }
+.areaEvoluciones{
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #505050;
+}
+
 .titulo-evoluciones{
-  font-size: 36px;
+  font-size: 4vw;
   text-align: right;
   color: white;
   font-family: 'Fredericka the Great', cursive;
 }
 .div-pokemon-evolucion{
-  width: 100%;
+  display: inline-block;
+  text-align: center;
+  width: 33%;
   height: 256px;
+}
+.div-pokemon-evolucion:hover{
+  background-color: #111111;
+}
+.div-pokemon-evolucion-img{
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 80%;
+}
+.img-pokemon-evolucion-img{
+  width: auto;
+  height: 100%;
+}
+.div-pokemon-evolucion-name{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  max-height: 256px;
+}
+.titulo-pokemon-evolucion{
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
 }
