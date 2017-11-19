@@ -15,7 +15,9 @@
   <div class="header">
     <div class="contenidoHeader">
       <label class="tituloHeader">Pokedex</label>
-      <input class="inputHeader" type="text" placeholder="Search..."/>
+      <input id="resultadoBusqueda" onkeypress="return LlenarConEnter(event)" class="inputHeader" list="pokemons" type="text" placeholder="Search..."/>
+      <datalist id="pokemons">
+      </datalist>
     </div>
     <div class="divNav">
       <ul class="topnav">
@@ -43,19 +45,19 @@
           <table class="table-fill">
             <tr>
               <td class="table-text-left">ID</td>
-              <td class="table-text">IdPokemon</td>
+              <td class="table-text" id="pokeID">IdPokemon</td>
             </tr>
             <tr>
               <td class="table-text-left">Name</td>
-              <td class="table-text">nombrePokemon</td>
+              <td class="table-text" id="pokeNombre">nombrePokemon</td>
             </tr>
             <tr>
               <td class="table-text-left">Type</td>
-              <td class="table-text">Tipo pokemon</td>
+              <td class="table-text" id="pokeTipo">Tipo pokemon</td>
             </tr>
             <tr>
               <td class="table-text-left">Location</td>
-              <td class="table-text">Ubicacion del pokemon</td>
+              <td class="table-text" id="pokeUbicacion">Ubicacion del pokemon</td>
             </tr>
           </table>
         </div>
@@ -64,7 +66,7 @@
         <div class="areaHabilidades">
           <h1 class="titulo-habilidades">Abilities:</h1>
           <ul class="nav-abilities">
-            <li class="nav-abilities-li">razor-wind</li>
+            <li class="nav-abilities-li" id="pokeHabilidad1">razor-wind</li>
             <li class="nav-abilities-li">swords-dance</li>
             <li class="nav-abilities-li">cut</li>
             <li class="nav-abilities-li">bind</li>
@@ -92,6 +94,7 @@
       </div>
     </div>
   </div>
-
+<script type="text/javascript" src="js/buscador.js"></script>
+<script type="text/javascript" src="js/pokedex.js"></script>
 </body>
 </html>

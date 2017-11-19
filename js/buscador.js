@@ -1,33 +1,30 @@
 var pokemons = [];
-setInterval(LlenarDatalist, 2000);
-function RequestPokemon(idPokemon) {
+
+window.onload = function() {
   var request = new XMLHttpRequest();
   request.onreadystatechange=function() {
   if (this.readyState == 4 && this.status == 200) {
     var pokemon = JSON.parse(this.responseText);
-    console.log(pokemon);
-    pokemons.push(pokemon.species.name);
-  }
+      console.log(pokemon);
+      for(i=0 ; i<802 ; i++){
+        pokemons.push(String(pokemon.results[i].name));
+      }
+      LlenarDatalist(pokemons);
+    }
   };
-  request.open("GET", "https://pokeapi.co/api/v2/pokemon/"+idPokemon, true);
+  request.open("GET", "https://pokeapi.co/api/v2/pokemon/?limit=802", true);
   request.send();
 }
 
-function CapturarPokemons(){
-  for (var i = 1; i < 802; i++) {
-    RequestPokemon(i);
-  }
-}
-
-function LlenarDatalist(){
-  for (var i in pokemons) {
+function LlenarDatalist(pokemons){
+  for(i=0; i<802 ; i++){
     var opcion = document.getElementById("pokemons");
     var node = document.createElement("option");
     var textnode = document.createTextNode(pokemons[i]);
     node.appendChild(textnode);
-    node.setAttribute("value",pokemons[i]);
     node.setAttribute("id",i);
+    node.setAttribute("name",pokemons[i]);
     opcion.appendChild(node);
-      console.log("OK");
+    console.log("OK");
   }
 }
