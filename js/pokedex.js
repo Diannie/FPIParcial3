@@ -2,7 +2,6 @@ var pokemon;
 var especie;
 var evolucion;
 var pokemons = [];
-var validacion = false;
 
 window.onload = function() {
   document.getElementById('busqueda').style.display='none';
@@ -13,12 +12,10 @@ function Existe(vector, texto) {
   var tamanio = vector.length;
   for (var i = 0; i < tamanio; i++) {
     if (vector[i] == texto) {
-      validacion = true;
-      return validacion;
+      return true;
     }
   }
-  validacion = false;
-  return validacion;
+  return false;
 }
 
 ///////////////////////////////Buscador///////////////////////////////////////
@@ -54,8 +51,8 @@ function LlenarDatalist(pokemons){
 function LlenarConEnter(e) {
   if (e.keyCode == 13) {
     var pokebuscado = document.getElementById('resultadoBusqueda').value;
-    Existe(pokemons, pokebuscado);
-    if (validacion) {
+
+    if (Existe(pokemons, pokebuscado)) {
       document.getElementById('sinBusqueda').style.display='none';
       var optionS = document.getElementsByName(pokebuscado);
       var pokeidS = optionS[0].getAttribute('id');
@@ -124,6 +121,7 @@ function Pokeinfo() {
       document.getElementById('pokeUbicacion').innerHTML = "unknown";
   }
   //Movimientos
+  document.getElementById("listaMovs").innerHTML = "";
   for (var i = 0; i < 5; i++) {
     var liMovs = document.getElementById("listaMovs");
     var node = document.createElement("li");
@@ -134,35 +132,62 @@ function Pokeinfo() {
   }
   //Descripcion
   document.getElementById('pokeDescripcion').innerHTML = especie.flavor_text_entries[2].flavor_text;
-  //Evoluciones
-  var contador=0;
-  var evolucionesArray = [];
-  ////////////////////////Evolucion 1///////////////////////////////////////////
-    document.getElementById('pokeEvolucion1').innerHTML = evolucion.chain.species.name;
-    evolucionesArray[0] = evolucion.chain.species.url.slice(42, -1);
-    contador = 1;
-  ////////////////////////Evolucion 2///////////////////////////////////////////
-    if (evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) {
-        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
-          document.getElementById('pokeEvolucion2').innerHTML += evolucion.chain.evolves_to[i].species.name + "<br>";
-          evolucionesArray[contador] = evolucion.chain.evolves_to[i].species.url.slice(42, -1);
-          contador = contador + 1;
-        }
+  //Generar evoluciones
+  //var pokemon;
+  //var especie;
+  //var evolucion;
+  //var pokemons = [];
+  //Evolucion por defecto
+  var areaDivEvoluciones = document.getElementById('areaEvoluciones');
+  areaDivEvoluciones.innerHTML = "";
+  var evolutionArray = evolucion.chain;
+  
+  for (var i = -1; i < evolutionArray.evolves_to.length; i++) {
+    if (i<0) {
+      var divEvolucion = document.createElement("DIV");
+      var divEvolucionImg = document.createElement("DIV");
+      var divEvolucionName = document.createElement("DIV");
+      var hTitulo = document.createElement("H1");
+      var iImg = document.createElement("IMG");
+      //var eImg.src;//Luego
+      var eName = document.createTextNode(evolutionArray.species.name);
+      iImg.setAttribute("class","img-pokemon-evolucion-img");
+      //iImg.setAttribute("src","#");
+      hTitulo.setAttribute("class","titulo-pokemon-evolucion");
+      divEvolucionImg.setAttribute("class","div-pokemon-evolucion-img");
+      divEvolucionName.setAttribute("class","div-pokemon-evolucion-name");
+      divEvolucion.setAttribute("class","div-pokemon-evolucion");
+      hTitulo.appendChild(eName);
+      divEvolucionImg.appendChild(iImg);
+      divEvolucionName.appendChild(hTitulo);
+      divEvolucion.appendChild(divEvolucionImg);
+      divEvolucion.appendChild(divEvolucionName);
+      areaDivEvoluciones.appendChild(divEvolucion);
+    }else {
+      var divEvolucion = document.createElement("DIV");
+      var divEvolucionImg = document.createElement("DIV");
+      var divEvolucionName = document.createElement("DIV");
+      var hTitulo = document.createElement("H1");
+      var iImg = document.createElement("IMG");
+      //var eImg.src;//Luego
+      var eName = document.createTextNode(evolutionArray.evolves_to[i].species.name);
+      iImg.setAttribute("class","img-pokemon-evolucion-img");
+      //iImg.setAttribute("src","#");
+      hTitulo.setAttribute("class","titulo-pokemon-evolucion");
+      divEvolucionImg.setAttribute("class","div-pokemon-evolucion-img");
+      divEvolucionName.setAttribute("class","div-pokemon-evolucion-name");
+      divEvolucion.setAttribute("class","div-pokemon-evolucion");
+      hTitulo.appendChild(eName);
+      divEvolucionImg.appendChild(iImg);
+      divEvolucionName.appendChild(hTitulo);
+      divEvolucion.appendChild(divEvolucionImg);
+      divEvolucion.appendChild(divEvolucionName);
+      areaDivEvoluciones.appendChild(divEvolucion);
+    }
+  }
 
-    } else {
-        document.getElementById('pokeEvolucion2').innerHTML += "No evolutions founds";
-    }
-  ////////////////////////Evolucion 3///////////////////////////////////////////
-    if ((evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) && (evolucion.chain.evolves_to[0].evolves_to[0] != null && evolucion.chain.evolves_to[0].evolves_to[0] != undefined)) {
-        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
-            for (var j = 0; j < evolucion.chain.evolves_to[i].evolves_to.length; j++) {
-              document.getElementById('pokeEvolucion3').innerHTML += evolucion.chain.evolves_to[i].evolves_to[j].species.name+ "<br>";
-              evolucionesArray[contador] = evolucion.chain.evolves_to[i].evolves_to[j].species.url.slice(42, -1);
-              contador = contador + 1;
-            }
-        }
-    } else {
-        document.getElementById('pokeEvolucion3').innerHTML += "No evolutions founds";
-    }
-    document.getElementById('busqueda').style.display='block';
+
+
+  //Muestra el div de la busqueda
+  document.getElementById('busqueda').style.display='block';
 }
