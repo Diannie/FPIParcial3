@@ -2,10 +2,23 @@ var pokemon;
 var especie;
 var evolucion;
 var pokemons = [];
+var validacion = false;
 
 window.onload = function() {
   document.getElementById('busqueda').style.display='none';
   RequestAutocompletar();
+}
+
+function Existe(vector, texto) {
+  var tamanio = vector.length;
+  for (var i = 0; i < tamanio; i++) {
+    if (vector[i] == texto) {
+      validacion = true;
+      return validacion;
+    }
+  }
+  validacion = false;
+  return validacion;
 }
 
 ///////////////////////////////Buscador///////////////////////////////////////
@@ -40,10 +53,10 @@ function LlenarDatalist(pokemons){
 
 function LlenarConEnter(e) {
   if (e.keyCode == 13) {
-    if (document.getElementById("pokemons")!=null || document.getElementById("pokemons")!=undefined) {
+    var pokebuscado = document.getElementById('resultadoBusqueda').value;
+    Existe(pokemons, pokebuscado);
+    if (validacion) {
       document.getElementById('sinBusqueda').style.display='none';
-      document.getElementById('busqueda').style.display='block';
-      var pokebuscado = document.getElementById('resultadoBusqueda').value;
       var optionS = document.getElementsByName(pokebuscado);
       var pokeidS = optionS[0].getAttribute('id');
       var pokeid = parseInt(pokeidS);
@@ -151,4 +164,5 @@ function Pokeinfo() {
     } else {
         document.getElementById('pokeEvolucion3').innerHTML += "No evolutions founds";
     }
+    document.getElementById('busqueda').style.display='block';
 }
