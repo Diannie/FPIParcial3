@@ -53,6 +53,7 @@ function LlenarConEnter(e) {
     var pokebuscado = document.getElementById('resultadoBusqueda').value;
 
     if (Existe(pokemons, pokebuscado)) {
+      Limpiar();
       document.getElementById('sinBusqueda').style.display='none';
       var optionS = document.getElementsByName(pokebuscado);
       var pokeidS = optionS[0].getAttribute('id');
@@ -141,53 +142,60 @@ function Pokeinfo() {
   var areaDivEvoluciones = document.getElementById('areaEvoluciones');
   areaDivEvoluciones.innerHTML = "";
   var evolutionArray = evolucion.chain;
-  
-  for (var i = -1; i < evolutionArray.evolves_to.length; i++) {
+  var cantidadEv = evolutionArray.evolves_to.length;
+  for (var i = -1; i < cantidadEv; i++) {
     if (i<0) {
-      var divEvolucion = document.createElement("DIV");
-      var divEvolucionImg = document.createElement("DIV");
-      var divEvolucionName = document.createElement("DIV");
-      var hTitulo = document.createElement("H1");
-      var iImg = document.createElement("IMG");
-      //var eImg.src;//Luego
-      var eName = document.createTextNode(evolutionArray.species.name);
-      iImg.setAttribute("class","img-pokemon-evolucion-img");
-      //iImg.setAttribute("src","#");
-      hTitulo.setAttribute("class","titulo-pokemon-evolucion");
-      divEvolucionImg.setAttribute("class","div-pokemon-evolucion-img");
-      divEvolucionName.setAttribute("class","div-pokemon-evolucion-name");
-      divEvolucion.setAttribute("class","div-pokemon-evolucion");
-      hTitulo.appendChild(eName);
-      divEvolucionImg.appendChild(iImg);
-      divEvolucionName.appendChild(hTitulo);
-      divEvolucion.appendChild(divEvolucionImg);
-      divEvolucion.appendChild(divEvolucionName);
-      areaDivEvoluciones.appendChild(divEvolucion);
-    }else {
-      var divEvolucion = document.createElement("DIV");
-      var divEvolucionImg = document.createElement("DIV");
-      var divEvolucionName = document.createElement("DIV");
-      var hTitulo = document.createElement("H1");
-      var iImg = document.createElement("IMG");
-      //var eImg.src;//Luego
-      var eName = document.createTextNode(evolutionArray.evolves_to[i].species.name);
-      iImg.setAttribute("class","img-pokemon-evolucion-img");
-      //iImg.setAttribute("src","#");
-      hTitulo.setAttribute("class","titulo-pokemon-evolucion");
-      divEvolucionImg.setAttribute("class","div-pokemon-evolucion-img");
-      divEvolucionName.setAttribute("class","div-pokemon-evolucion-name");
-      divEvolucion.setAttribute("class","div-pokemon-evolucion");
-      hTitulo.appendChild(eName);
-      divEvolucionImg.appendChild(iImg);
-      divEvolucionName.appendChild(hTitulo);
-      divEvolucion.appendChild(divEvolucionImg);
-      divEvolucion.appendChild(divEvolucionName);
-      areaDivEvoluciones.appendChild(divEvolucion);
+      GenerarDivEvolucion(areaDivEvoluciones, "ruta", evolutionArray.species.name);
+    }else{
+      GenerarDivEvolucion(areaDivEvoluciones, "ruta", evolutionArray.evolves_to[i].species.name);
+    }
+  }
+  for (var i = 0; i < evolutionArray.evolves_to.length; i++) {
+    for (var j = 0; j < evolutionArray.evolves_to[i].evolves_to.length; j++) {
+      console.log(evolutionArray.evolves_to[i].evolves_to[j].species.name);
+      GenerarDivEvolucion(areaDivEvoluciones, "ruta", evolutionArray.evolves_to[i].evolves_to[j].species.name);
     }
   }
 
-
-
   //Muestra el div de la busqueda
   document.getElementById('busqueda').style.display='block';
+}
+
+function cantidadTerceras(arreglo) {
+  var contador = 0;
+  for (var i = 0; i < arreglo.length; i++) {
+    contador += arreglo[i].evolves_to.length;
+  }
+  return contador;
+}
+function GenerarDivEvolucion(divPrincipal, ruta, nombre) {
+  var divEvolucion = document.createElement("DIV");
+  var divEvolucionImg = document.createElement("DIV");
+  var divEvolucionName = document.createElement("DIV");
+  var hTitulo = document.createElement("H1");
+  var iImg = document.createElement("IMG");
+  var eName = document.createTextNode(nombre);
+  iImg.setAttribute("class","img-pokemon-evolucion-img");
+  iImg.setAttribute("src","");//ruta
+  hTitulo.setAttribute("class","titulo-pokemon-evolucion");
+  divEvolucionImg.setAttribute("class","div-pokemon-evolucion-img");
+  divEvolucionName.setAttribute("class","div-pokemon-evolucion-name");
+  divEvolucion.setAttribute("class","div-pokemon-evolucion");
+  hTitulo.appendChild(eName);
+  divEvolucionImg.appendChild(iImg);
+  divEvolucionName.appendChild(hTitulo);
+  divEvolucion.appendChild(divEvolucionImg);
+  divEvolucion.appendChild(divEvolucionName);
+  divPrincipal.appendChild(divEvolucion);
+}
+function Limpiar(){
+  document.getElementById('imagen').src ="";
+  document.getElementById('pokeID').innerHTML = "";
+  document.getElementById('pokeNombre').innerHTML = "";
+  document.getElementById('pokeTipo').innerHTML = "";
+  document.getElementById('pokeUbicacion').innerHTML = "";
+  document.getElementById("listaMovs").innerHTML = "";
+  document.getElementById('pokeDescripcion').innerHTML = "";
+  document.getElementById('areaEvoluciones').innerHTML = "";
+  alert("The search is in process, please wait");
 }
