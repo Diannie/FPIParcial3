@@ -11,6 +11,11 @@
   </head>
 
   <body onload="CargarSignin()">
+    <div class="div-header">
+      <div class="contenidoHeader">
+        <label class="tituloHeader"><a href="pokedex.html">Pokedex</a></label>
+      </div>
+    </div>
     <div id="clouds">
     	<div class="cloud x1"></div>
     	<div class="cloud x2"></div>
@@ -24,8 +29,14 @@
         <div id="login">
         <form method="post">
           <fieldset class="clearfix">
-            <p><span class="fontawesome-user"></span><input type="text" placeholder="Username" required></p>
-            <p><span class="fontawesome-lock"></span><input type="password" placeholder="Password" required></p>
+            <p>
+              <span class="fontawesome-user"></span>
+              <input type="email" placeholder="Username" required>
+            </p>
+            <p>
+              <span class="fontawesome-lock"></span>
+              <input type="password" placeholder="Password" required>
+            </p>
             <p><input type="submit" value="Sign in"></p>
           </fieldset>
         </form>
@@ -38,9 +49,18 @@
         <div id="login">
         <form method="post">
           <fieldset class="clearfix">
-            <p><span class="fontawesome-user"></span><input type="text" placeholder="Name" required></p>
-            <p><span class="fontawesome-user"></span><input type="text" placeholder="Username" required></p>
-            <p><span class="fontawesome-lock"></span><input type="password" placeholder="Password" required></p>
+            <p>
+              <span class="fontawesome-user"></span>
+              <input type="text" placeholder="Name" required>
+            </p>
+            <p>
+              <span class="fontawesome-user"></span>
+              <input type="email" placeholder="Username" required>
+            </p>
+            <p>
+              <span class="fontawesome-lock"></span>
+              <input type="password" placeholder="Password" required>
+            </p>
             <p><input type="submit" value="Sign up"></p>
           </fieldset>
         </form>

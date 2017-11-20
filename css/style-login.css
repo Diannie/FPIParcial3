@@ -21,6 +21,25 @@ body {
   overflow-y:auto !important;
   overflow-x:hidden !important;
 }
+.div-header{
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 8vw;
+  text-align: center;
+  background-color: #454545;
+}
+.tituloHeader{
+  font-size: 5vw;
+  color: white;
+  font-family: 'Barlow Condensed', serif;
+}
+.contenidoHeader{
+  position: relative;
+  top: 2.5vw;
+  width: 25%;
+  display: inline-block;
+}
 
 a {
   color: #eee;
@@ -85,7 +104,7 @@ p {
   height: 50px;
 }
 
-#login form input[type="text"], input[type="password"] {
+#login form input[type="email"], input[type="password"],input[type="text"] {
   background-color: #3b4148;
   border-radius: 0px 3px 3px 0px;
   color: #606468;

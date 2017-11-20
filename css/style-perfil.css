@@ -10,7 +10,6 @@ body {
 .contenidoHeader{
   position: relative;
   width: 25%;
-  top: 20%;
   text-align: center;
   display: inline-block;
 }
@@ -22,7 +21,6 @@ body {
 .divNav{
   position: relative;
   width: 74%;
-  top: 20%;
   text-align: right;
   display: inline-block;
 }
