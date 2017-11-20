@@ -1,0 +1,120 @@
+body {
+  background-image: url("../img/fondo.jpg");
+}
+.header{
+  position: relative;
+  width: 100%;
+  height: 96px;
+  background-color: #454545;
+}
+.contenidoHeader{
+  position: relative;
+  width: 25%;
+  top: 20%;
+  text-align: center;
+  display: inline-block;
+}
+.tituloHeader{
+  font-size: 5vw;
+  color: white;
+  font-family: 'Barlow Condensed', serif;
+}
+.divNav{
+  position: relative;
+  width: 74%;
+  top: 20%;
+  text-align: right;
+  display: inline-block;
+}
+.topnav-li{
+  position: relative;
+  display: inline-block;
+  float: right;
+  right: 10%;
+  text-align: center;
+  padding: 1%;
+  color: white;
+  font-family: 'Barlow Condensed', serif;
+  font-size: 4vw;
+}
+.topnav-li:hover{
+  background-color: black;
+}
+.a-color{
+  color: white;
+}
+.pokeFavoritos{
+  position: relative;
+  top: 32px;
+  width: 100%;
+  height: auto;
+  min-height: 512px;
+  background-color: #505050;
+}
+.areaImagen{
+  position: relative;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  top: 16px;
+  width: 29%;
+  height: 100%;
+  min-height: 256px;
+}
+.areaNombre{
+  position: relative;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  top: 16px;
+  width: 100%;
+  height: 100%;
+  min-height: 256px;
+}
+.img-areaImagen{
+  width: 256px;
+  height: auto;
+  padding: 1%;
+}
+.areaPokemones{
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  height: auto;
+  min-height: 256px;
+  background-color: rgba(0, 0, 0, 0.10);
+}
+.div-pokemon-favorito{
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 33%;
+  height: 256px;
+}
+.div-pokemon-favorito:hover{
+  background-color: rgba(13, 13, 13, 0.25);
+}
+.div-pokemon-img{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 80%;
+}
+.div-pokemon-name{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 20%;
+}
+.pokemon-img{
+  width: 200px;
+  height: 200px;
+
+}
+.h1-pokemon-name{
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
