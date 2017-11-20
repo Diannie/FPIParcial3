@@ -70,10 +70,17 @@ ul.topnav li a.active {
   width: 100%;
   height: auto;
 }
-.div-SinBusqueda{
+.div-sinBusqueda{
+  font-family: 'Barlow Condensed', serif;
+  font-size: 30px;
+  color: white;
+  padding: 10px;
+  padding-bottom: 25vw;
+  background-image: url(../img/img-login.png);
   position: relative;
+  top: 32px;
+  height: 50%;
   width: 100%;
-  height: auto;
 }
 .div-busqueda{
   position: relative;
