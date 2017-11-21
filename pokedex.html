@@ -1,111 +1,111 @@
 <!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>POKEDEX</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel=icon href=img/favicon.png type="image/png">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/Barlow+Condensed.css">
-  <link rel="stylesheet" href="css/Press+Start+2P.css">
-  <link rel="stylesheet" href="css/Fredericka+the+Great.css">
-</head>
-<body>
-  <div class="header">
-    <div class="contenidoHeader">
-      <label class="tituloHeader">Pokedex</label>
-      <input id="resultadoBusqueda" onkeypress="return LlenarConEnter(event)" class="inputHeader" list="pokemons" type="text" placeholder="Search..."/>
-      <datalist id="pokemons">
-        <!--Los option con appendChild-->
-        <option id="0" name="Bulbasaur">Bulbasour</option>
-      </datalist>
-    </div>
-    <div class="divNav">
-      <ul class="topnav">
-        <li class="active"><a href="pokedex.html">Home</a></li>
-        <li><a href="login.html">Sign in</a></li>
-        <li><a href="perfil.html">Profile</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="cuerpo">
-    <div class="div-sinBusqueda" id="sinBusqueda">
-      <h1 class="tituloCuerpo">Find your favorite pokemons.</h1><br>
-      <p class="textoCuerpo">Explore the 802 pokemons, Pokedex shows you all the information you want to know. Just look for the one you want!<br>
-                            Create an account and store your favorite pokemons to check them later.</p>
-    </div>
-    <div class="div-busqueda" id="busqueda">
-      <div class="shaped">
-        <div class="pokeball-div">
-          <img class="pokeball-img" src="img/pokeball.png" alt="estrella"/>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>POKEDEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=icon href=img/favicon.png type="image/png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/master-style.css">
+    <link rel="stylesheet" href="css/Barlow+Condensed.css">
+    <link rel="stylesheet" href="css/Press+Start+2P.css">
+  </head>
+  <body class="body-pokedex">
+    <div class="main-header">
+      <div class="main-header-left">
+        <div class="main-header-left-label">
+          <label class="header-titulo"><a href="pokedex.html">Pokedex</a></label>
         </div>
-        <div class="base-img">
-          <img src="img/pokemon-base.png" alt="">
-        </div>
-        <div class="areaImagen">
-          <img id="imagen" class="imagen" alt="imagen del pokemon" src="" alt="Imagen del pokemon"/>
-        </div>
-        <div class="favorite"></div>
-        <div class="areaDatos">
-          <table class="table-fill">
-            <tr>
-              <td class="table-text-left">ID</td>
-              <td class="table-text" id="pokeID">IdPokemon</td>
-            </tr>
-            <tr>
-              <td class="table-text-left">Name</td>
-              <td class="table-text" id="pokeNombre">nombrePokemon</td>
-            </tr>
-            <tr>
-              <td class="table-text-left">Type</td>
-              <td class="table-text" id="pokeTipo">Tipo pokemon</td>
-            </tr>
-            <tr>
-              <td class="table-text-left">Location</td>
-              <td class="table-text" id="pokeUbicacion">Ubicacion del pokemon</td>
-            </tr>
-          </table>
+        <div class="main-header-left-input">
+          <input id="resultadoBusqueda" onkeypress="return LlenarConEnter(event)" class="header-input" list="pokemons" type="text" placeholder="Search..."/>
+          <datalist id="pokemons">
+            <!--Los option con appendChild-->
+          </datalist>
         </div>
       </div>
-      <div class="header-abilities">
-        <h1 class="titulo-habilidades">Abilities:</h1>
+      <div class="main-header-right">
+        <ul class="header-nav">
+          <li><a href="pokedex.html">Home</a></li>
+          <li><a href="login.html">Sign in</a></li>
+          <li><a href="perfil.html">Profile</a></li>
+        </ul>
       </div>
-      <div class="header-description">
-        <h1 class="titulo-habilidades">Description:</h1>
-      </div>
-      <div class="div-abilities">
-        <div class="areaHabilidades">
-          <ul class="nav-abilities" id="listaMovs">
-            <!--creadas con appendChild-->
-          </ul>
-        </div>
-        <div class="areaDescription">
-          <p class="pokemon-description-parrafo" id="pokeDescripcion">Texto que describe el pokemon</p>
-        </div>
+    </div>
+    <div class="main-body">
+      <div class="main-body-initial" id="sinBusqueda">
+        <h1 onclick="FocusBuscardo()">Find your favorite pokemons.</h1><br>
+        <p>Explore the 802 pokemons, Pokedex shows you all the information you want to know. Just look for the one you want!<br>
+                              Create an account and store your favorite pokemons to check them later.</p>
       </div>
 
-
-      <div class="header-evoluciones">
-        <h1 class="titulo-evoluciones">Evolutions:</h1>
-      </div>
-      <div class="areaEvoluciones" id="areaEvoluciones">
-
-        <!--tomar este de ejemplo para generar los appendChild
-        <div class="div-pokemon-evolucion">
-          <div class="div-pokemon-evolucion-img">
-            <img class="img-pokemon-evolucion-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="">
+      <div class="main-body-pokedex" id="busqueda">
+        <div class="div-pokedex-information">
+          <div class="div-pokedex-pokeball"><img class="img-pokedex-pokeball" src="img/pokeball.png" alt="pokeball.png"/></div>
+          <div class="div-pokedex-img"><img class="img-pokedex-base" src="img/pokemon-base.png" alt=""></div>
+          <div class="div-pokedex-img">
+            <img id="imagen" class="img-pokedex" alt="imagen del pokemon" src="img/whosThatPokemon.png" alt="Imagen del pokemon"/>
           </div>
-          <div class="div-pokemon-evolucion-name">
-            <h1 class="titulo-pokemon-evolucion" id="pokeEvolucion1">nombre pokemon evolucionado</h1>
+          <div class="div-pokedex-table">
+            <table class="table-pokedex">
+              <tr>
+                <td class="table-text-left">ID</td>
+                <td class="table-text" id="pokeID">IdPokemon</td>
+              </tr>
+              <tr>
+                <td class="table-text-left">Name</td>
+                <td class="table-text" id="pokeNombre">nombrePokemon</td>
+              </tr>
+              <tr>
+                <td class="table-text-left">Type</td>
+                <td class="table-text" id="pokeTipo">Tipo pokemon</td>
+              </tr>
+              <tr>
+                <td class="table-text-left">Location</td>
+                <td class="table-text" id="pokeUbicacion">Ubicacion del pokemon</td>
+              </tr>
+            </table>
           </div>
-        </div>
-        -->
 
+        </div>
+        <div class="div-tab-details">
+          <h1>More Details</h1>
+        </div>
+        <div class="div-pokemon-details">
+          <div class="div-pokemon-abilities">
+            <h1>Abilities</h1>
+            <ul class="nav-abilities" id="listaMovs">
+              <!--creadas con appendChild-->
+            </ul>
+          </div>
+          <div class="div-pokemon-description">
+            <h1>Description</h1>
+            <p id="pokeDescripcion">Texto que describe el pokemon</p>
+          </div>
+
+        </div>
+        <div class="div-header-evolution">
+          <h1>Evolutions</h1>
+        </div>
+        <div class="div-evolutions" id="areaEvoluciones">
+          <!--tomar este de ejemplo para generar los appendChild
+          <div class="div-pokemon-evolucion">
+            <div class="div-pokemon-evolucion-img">
+              <img class="img-pokemon-evolucion-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="">
+            </div>
+            <div class="div-pokemon-evolucion-name">
+              <h1 class="titulo-pokemon-evolucion" id="pokeEvolucion1">nombre pokemon evolucionado</h1>
+            </div>
+          </div>
+          -->
+        </div>
 
       </div>
+
+
+
+
+
     </div>
-  </div>
-<script type="text/javascript" src="js/pokedex.js"></script>
-</body>
+    <script type="text/javascript" src="js/pokedex.js"></script>
+  </body>
 </html>

@@ -10,6 +10,9 @@ window.onload = function() {
   document.getElementById('busqueda').style.display='none';
   RequestAutocompletar();
 }
+function FocusBuscardo() {
+  document.getElementById('resultadoBusqueda').focus();  
+}
 
 ///////////////////////////////Buscador///////////////////////////////////////
 function RequestAutocompletar() {
