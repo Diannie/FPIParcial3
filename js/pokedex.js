@@ -115,7 +115,16 @@ function Pokeinfo() {
   }
 
   //Descripcion
-  document.getElementById('pokeDescripcion').innerHTML = especie.flavor_text_entries[2].flavor_text;
+  for (var i = 0; i < especie.flavor_text_entries.length; i++) {
+				if (especie.flavor_text_entries[i].language.name == "en") {
+					var descripcion = especie.flavor_text_entries[i].flavor_text;
+					if(descripcion.length > 195){
+						descripcion = descripcion.substring(0,195)+"...";
+					}
+					document.getElementById('pokeDescripcion').innerHTML = descripcion;
+					break;
+				}
+			}
 
   //Generar evoluciones
   var areaDivEvoluciones = document.getElementById('areaEvoluciones');
