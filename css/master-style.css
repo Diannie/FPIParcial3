@@ -1,0 +1,238 @@
+.body-pokedex{
+  background-image: url("../img/fondo.jpg");
+}
+.main-header{
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 8vw;
+  background-color: #454545;
+}
+.main-header-left{
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  top: 1vw;
+}
+.main-header-right{
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  top: 1vw;
+}
+.main-header-left-label{
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 40%;
+}
+.main-header-left-input{
+  position: relative;
+  display: inline-block;
+  width: 59%;
+  top: -0.5vw;
+}
+.header-input{
+  width: 40%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-image: url('../searchicon.png');
+  background-position: 5px 5px;
+  background-repeat: no-repeat;
+  padding: 10px 20px 6px 30px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  font-size: 16px;
+  font-family: 'Barlow Condensed', serif;
+}
+.header-input:hover{
+  width: 100%;
+}
+.header-titulo{
+  font-size: 4vw;
+  color: white;
+  font-family: 'Barlow Condensed', serif;
+}
+.header-titulo a{
+  color: white;
+  text-decoration: none;
+}
+.header-titulo a:hover{
+  text-decoration: underline;
+}
+.header-nav li{
+  float: left;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  color: white;
+  font-size: 3vw;
+  font-family: 'Barlow Condensed', serif;
+}
+.header-nav li a{
+  text-align: center;
+  color: white;
+  font-size: 3vw;
+  font-family: 'Barlow Condensed', serif;
+  text-decoration: none;
+}
+.header-nav li a:hover{
+  text-decoration: underline;
+}
+.main-body{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.main-body-initial{
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  top: 3vw;
+  background-image: url(../img/img-login.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #484159;
+}
+.main-body-initial h1{
+  padding: 2vw;
+  font-size: 3em;
+  text-align: center;
+  text-decoration: underline;
+  color: white;
+  font-family: 'Barlow Condensed', serif;
+}
+.main-body-initial p{
+  padding: 2vw;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  font-family: 'Barlow Condensed', serif;
+}
+.main-body-pokedex{
+  position: relative;
+  top: 2vw;
+  width: 100%;
+  height: auto;
+}
+.div-pokedex-information{
+  position: relative;
+  width: 100%;
+  height: 32vw;
+  top: 3vw;
+  background-color: #787878;
+  clip-path: polygon(0 0, 25% 0, 30% 10%, 100% 10%, 100% 100%, 30% 100%, 25% 90%, 0 90%);
+}
+.div-pokedex-pokeball{
+  position: absolute;
+  left: 6vw;
+  width: 60%;
+  height: 32vw;
+}
+.img-pokedex-pokeball{
+  position: relative;
+  top: 4vw;
+  transform: rotate(-45deg);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  max-width: 50vw;
+}
+.img-pokedex-base{
+  position: relative;
+  top: 8vw;
+  left: 2.5vw;
+  width: 25vw;
+  height: 25vw;
+}
+.img-pokedex{
+  position: relative;
+  left: 1vw;
+  width: 25vw;
+  height: 25vw;
+}
+.div-pokedex-img{
+  position: absolute;
+  width: 30%;
+  height: 28vw;
+}
+.div-pokedex-table{
+  position: absolute;
+  width: 50%;
+  height: 26vw;
+  left: 36vw;
+  top: 4vw;
+}
+.table-pokedex{
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 100%;
+  width: 100%;
+  animation: float 5s infinite;
+  font-family: 'Press Start 2P', cursive;
+}
+.table-pokedex{
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 100%;
+  width: 100%;
+
+  font-family: 'Press Start 2P', cursive;
+}
+.table-text-left{
+  background: #4E5066;
+  color: white;
+  padding-left: 0px;
+  padding-right: 20px;
+  text-align:right;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  border: 2px solid #4CAF50;
+}
+.table-text{
+  background: #FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300px;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border: 2px solid #4CAF50;
+}
+.table-text:hover{
+  color: white;
+  background:#4E5066;
+}
+.div-tab-details{
+  position: relative;
+  top: 5vw;
+  width: 100%;
+  height: 4vw;
+  background-size:cover;
+  background-image: url(../img/abilities2.png);
+  clip-path: polygon(0 0, 25% 0%, 30% 100%, 0 100%);
+}
+.div-tab-details h1{
+  font-size: 2vw;
+  padding-left: 2vw;
+  padding-top: 1vw;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+.div-pokemon-details{
+  position: relative;
+  top: 5vw;
+  width: 100%;
+  height: auto;
+  min-height: 25vw;
+  background-size:cover;
+  background-image: url(../img/abilities2.png);
+}
+.div-pokemon-abilities{
+
+}
+.div-pokemon-description{
+  
+}
