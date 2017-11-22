@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=icon href=img/favicon.png type="image/png">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/awesome-font.css">
     <link rel="stylesheet" href="css/style-login.css">
+    <link rel="stylesheet" href="css/awesome-font.css">
+    <link rel="stylesheet" href="css/Barlow+Condensed.css">
+
   </head>
 
-  <body onload="CargarSignin()">
-    <div class="div-header">
+  <body onload="CargarSignin()" class="body-login">
+    <div class="main-header">
       <div class="contenidoHeader">
         <label class="tituloHeader"><a href="pokedex.html">Pokedex</a></label>
       </div>
@@ -31,13 +33,13 @@
           <fieldset class="clearfix">
             <p>
               <span class="fontawesome-user"></span>
-              <input type="email" placeholder="Username" required>
+              <input class="input-login" type="email" placeholder="Username" required>
             </p>
             <p>
               <span class="fontawesome-lock"></span>
-              <input type="password" placeholder="Password" required>
+              <input class="input-login" type="password" placeholder="Password" required>
             </p>
-            <p><input type="submit" value="Sign in"></p>
+            <p><input class="input-login" type="submit" value="Sign in"></p>
           </fieldset>
         </form>
         <br>
@@ -51,17 +53,17 @@
           <fieldset class="clearfix">
             <p>
               <span class="fontawesome-user"></span>
-              <input type="text" placeholder="Name" required>
+              <input class="input-login" type="text" placeholder="Name" required>
             </p>
             <p>
               <span class="fontawesome-user"></span>
-              <input type="email" placeholder="Username" required>
+              <input class="input-login" type="email" placeholder="Username" required>
             </p>
             <p>
               <span class="fontawesome-lock"></span>
-              <input type="password" placeholder="Password" required>
+              <input class="input-login" type="password" placeholder="Password" required>
             </p>
-            <p><input type="submit" value="Sign up"></p>
+            <p><input class="input-login" type="submit" value="Sign up"></p>
           </fieldset>
         </form>
         <br>

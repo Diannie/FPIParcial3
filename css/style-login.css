@@ -1,3 +1,10 @@
+.main-header{
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 8vw;
+  background-color: #454545;
+}
 /* ---------- FONTAWESOME ---------- */
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
@@ -37,10 +44,10 @@ body {
 .contenidoHeader{
   position: relative;
   top: 2.5vw;
-  width: 25%;
+  text-align: center;
+  width: 100%;
   display: inline-block;
 }
-
 a {
   color: #eee;
   text-decoration: none;
@@ -60,7 +67,7 @@ input {
 }
 
 p {
-  line-height: 1.5em;
+  line-height: 2em;
 }
 
 .clearfix {
