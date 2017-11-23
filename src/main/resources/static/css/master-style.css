@@ -120,8 +120,8 @@
   text-align: center;
   top: 17vw;
   left: 24vw;
-  width: 16%;
-  height: 16vw;
+  width: 128px;
+  height: 128px;
   background-repeat: no-repeat;
   background-image: url(../img/blackStar.png);
 }

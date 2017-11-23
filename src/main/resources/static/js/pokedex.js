@@ -11,7 +11,7 @@ window.onload = function() {
   RequestAutocompletar();
 }
 function FocusBuscardo() {
-  document.getElementById('resultadoBusqueda').focus();  
+  document.getElementById('resultadoBusqueda').focus();
 }
 
 ///////////////////////////////Buscador///////////////////////////////////////
@@ -111,7 +111,12 @@ function Pokeinfo() {
   for (var i = 0; i < 5; i++) {
     var liMovs = document.getElementById("listaMovs");
     var node = document.createElement("li");
-    var textnode = document.createTextNode(pokemon.moves[i].move.name);
+    var textnode;
+    if(pokemon.moves[i]== undefined){
+      textnode = document.createTextNode("No more moves found");
+    }else{
+      textnode = document.createTextNode(pokemon.moves[i].move.name);
+    }
     node.appendChild(textnode);
     node.setAttribute("class","nav-abilities-li");
     liMovs.appendChild(node);
