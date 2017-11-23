@@ -115,6 +115,20 @@
   color: white;
   font-family: 'Barlow Condensed', serif;
 }
+.div-favorite-star{
+  position: absolute;
+  text-align: center;
+  top: 17vw;
+  left: 24vw;
+  width: 16%;
+  height: 16vw;
+  background-repeat: no-repeat;
+  background-image: url(../img/blackStar.png);
+}
+
+.div-favorite-star:hover{
+  background-image: url(../img/yellowStar.png);
+}
 .main-body-pokedex{
   position: relative;
   top: 2vw;
