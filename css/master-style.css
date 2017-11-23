@@ -32,9 +32,6 @@
   width: 59%;
   top: -0.5vw;
 }
-.div-header-titulo{
-  
-}
 .header-input{
   width: 40%;
   border: 2px solid #ccc;
@@ -68,9 +65,9 @@
   text-decoration: underline;
 }
 .header-nav li{
-  float: left;
+  float: right;
   padding-left: 1vw;
-  padding-right: 1vw;
+  padding-right: 4vw;
   color: white;
   font-size: 3vw;
   font-family: 'Barlow Condensed', serif;
@@ -197,7 +194,7 @@
   text-align:right;
   vertical-align:middle;
   font-weight:300;
-  font-size:18px;
+  font-size:1.5vw;
   border: 2px solid #4CAF50;
 }
 .table-text{
@@ -206,7 +203,7 @@
   text-align:left;
   vertical-align:middle;
   font-weight:300px;
-  font-size:18px;
+  font-size:1.5vw;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   border: 2px solid #4CAF50;
 }
@@ -251,6 +248,7 @@
 .div-pokemon-abilities h1{
   color: white;
   font-size: 2vw;
+  padding: 1vw;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
 }
@@ -282,6 +280,7 @@
 .div-pokemon-description h1{
   color: white;
   font-size: 2vw;
+  padding: 1vw;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
 }
@@ -326,11 +325,12 @@
 .div-pokemon-evolucion{
   display: inline-block;
   text-align: center;
+  cursor:pointer; cursor: hand;
   width: 33%;
   height: 256px;
 }
 .div-pokemon-evolucion:hover{
-  background-color: #111111;
+  background-color: rgba(10, 10, 10, 0.7);
 }
 .div-pokemon-evolucion-img{
   position: relative;
@@ -353,4 +353,67 @@
   font-size: 16px;
   font-family: 'Press Start 2P', cursive;
   color: white;
+}
+/*CSS del pefil*/
+.main-header-label{
+  position: relative;
+  text-align: center;
+  top: 1vw;
+}
+.div-profile{
+  position: relative;
+  top: 4vw;
+  min-height: 50vw;
+  background-color: #004660;
+  background-image: url(../img/great_ball.png);
+}
+.div-profile-info{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.70);
+  float: left;
+  top: 1vw;
+  left: 2vw;
+  width: 30%;
+  height: 35vw;
+}
+.btn-profile-logout{
+  position: absolute;
+  top: 28vw;
+  left: 5vw;
+  padding: 2vw 5vw;
+  background-color: #c82b2c;
+  border: none;
+  color: white;
+  font-size: 1.5vw;
+  font-family: 'Press Start 2P', cursive;
+}
+.div-profile-img{
+  position: relative;
+  top: 3.5vw;
+}
+
+.img-areaImagen{
+  width: 16vw;
+  height: 16vw;
+}
+.div-profile-name{
+  position: relative;
+  top: 3.5vw;
+}
+.div-profile-favorites{
+  position: relative;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.25);
+  top: 1vw;
+  left: 4vw;
+  width: 64%;
+  height: auto;
+  min-height: 30vw;
+}
+.h1-profile-name{
+  color: white;
+  font-size: 3vw;
+  font-family: 'Press Start 2P', cursive;
 }
