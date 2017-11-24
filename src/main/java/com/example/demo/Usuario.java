@@ -1,6 +1,7 @@
 package com.example.demo;
 
 public class Usuario {
+	Integer id;
 	String email;
 	String name;
 	String gender;
@@ -10,11 +11,21 @@ public Usuario() {
 	
 }
 
-public Usuario(String email, String name, String gender, String pass) {
+public Usuario(Integer id, String email, String name, String gender, String pass) {
+	super();
+	this.id = id;
 	this.email = email;
 	this.name = name;
 	this.gender = gender;
 	this.pass = pass;
+}
+
+public Integer getId() {
+	return id;
+}
+
+public void setId(Integer id) {
+	this.id = id;
 }
 
 public String getEmail() {
@@ -48,5 +59,7 @@ public String getPass() {
 public void setPass(String pass) {
 	this.pass = pass;
 }
+
+
 
 }
