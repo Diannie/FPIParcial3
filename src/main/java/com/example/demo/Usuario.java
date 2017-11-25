@@ -1,18 +1,17 @@
 package com.example.demo;
 
 public class Usuario {
-	Integer id;
-	String email;
-	String name;
-	String gender;
-	String pass;
+	private Integer id;
+	private String email;
+	private String name;
+	private String gender;
+	private String pass;
 
-public Usuario() {
-	
-}
+	public Usuario() {
+		
+	}
 
 public Usuario(Integer id, String email, String name, String gender, String pass) {
-	super();
 	this.id = id;
 	this.email = email;
 	this.name = name;

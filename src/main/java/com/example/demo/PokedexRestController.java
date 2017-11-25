@@ -14,43 +14,45 @@ public class PokedexRestController {
 	@Autowired
 	Conexion conexion;
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/{email}")
-	Usuario obtenerPorEmail(@PathVariable String email) {
-		conexion.connect();
-		return this.conexion.findByCorreo(email);
-	}
-
-	@RequestMapping(value = "/createUser", method = RequestMethod.POST, headers="Accept=application/json") 
-	public Usuario crearUsuario(@RequestBody Usuario usuario) {
-		conexion.connect();
-		Usuario user = conexion.saveUsuario(usuario.getName(), usuario.getEmail(), usuario.getGender(), usuario.getPass());
-		conexion.close();
-		return user;
-	}
-
-	//@RequestMapping(value="/saveFavorite", method = RequestMethod.POST, headers="Accept=application/json")
-	//public void agregarFavoritos(@RequestBody ArrayList<Object> arreglo) {
-	//	conexion.connect();
-	//	conexion.saveFavoritePokemon(Integer.parseInt(arreglo.get(0).toString()),
-	//			(Integer.parseInt(arreglo.get(1).toString())));
-	//	conexion.close();		
-	//}
-
-	@RequestMapping(value = "/logIn", method = RequestMethod.POST, headers="Accept=application/json")
-	public Usuario loguearse(@RequestBody Usuario usuario) {
-		conexion.connect();
-		Usuario user = conexion.findByCorreo(usuario.getEmail());
-		if(user != null) {
-			if(!user.getPass().equals(usuario.getPass())) {
-				System.out.println("-"+user.getPass()+"-");
-				System.out.println("-"+usuario.getPass()+"-");
-				user = null;
-			}
-		}else {
-			//user = new Usuario(null,null,null,null);
+	@RequestMapping(value = "/login", method = RequestMethod.POST ,headers="Accept=application/json")
+	public Usuario login(@RequestBody Usuario usuario) {
+		conexion.connect();		
+		if(usuario != null) {
+			Usuario user = conexion.findByCorreo(usuario.getEmail());
+			if(user != null) {
+				if(user.getPass().equals(usuario.getPass())) {
+					conexion.close();
+					System.out.println("Ha ingresado "+user.getName());
+					return user;
+				}				
+			}			
 		}
 		conexion.close();
-		return user;
+		return null;
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST ,headers="Accept=application/json")
+	public boolean register(@RequestBody Usuario usuario) {
+		conexion.connect();
+		if(usuario != null) {
+			if (conexion.saveUsuario(usuario)) {
+				System.out.println("Se ha registrado"+usuario.getEmail());
+				conexion.close();
+				return true;
+			}
+		}
+		conexion.close();
+		return false;
+	}
+	
+	
+	
+	@RequestMapping( value="/favorites/{idUsuario}", method = RequestMethod.GET)
+	public ArrayList<Favorito> allFavorites(@PathVariable int idUsuario) {
+		conexion.connect();
+		ArrayList<Favorito> favoritos = conexion.favoritos(idUsuario);		
+		conexion.close();
+		return favoritos;
 	}
 
 }
