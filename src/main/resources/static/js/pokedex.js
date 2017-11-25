@@ -8,6 +8,7 @@ var cantidadEv;
 
 window.onload = function() {
   document.getElementById('busqueda').style.display='none';
+  document.getElementById('navProfile').style.display = "none";
   RequestAutocompletar();
 }
 function FocusBuscardo() {
