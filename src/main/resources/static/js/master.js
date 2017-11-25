@@ -1,10 +1,13 @@
 document.getElementById('loginForm').onsubmit = function(e){
+
   var email = document.getElementById("email").value;
 	var pass = document.getElementById("pass").value;
   var userRequest = new XMLHttpRequest();
 	  userRequest.onreadystatechange = function() {
+		  alert("ok");
 		  if (this.readyState == 4 && this.status == 200) {
 			  var respuesta = JSON.parse(this.responseText);
+			  
 			  if(respuesta.id===null){
 				  e.preventDefault();
 				  document.getElementById('errores').value = "Contraseña o Correo incorrectos";
@@ -21,7 +24,7 @@ document.getElementById('loginForm').onsubmit = function(e){
 			  }
 		  }
 	  };
-	  userRequest.open('POST', '/login');
+	  userRequest.open('POST', '/singin');
 	  userRequest.setRequestHeader("Content-Type", "application/json");
 	  userRequest.setRequestHeader("Accept", "application/json");
 	  userRequest.send(JSON.stringify({"id": 0, "name": "", "email": email, "contrasena": pass}));

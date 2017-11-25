@@ -14,7 +14,7 @@ public class PokedexRestController {
 	@Autowired
 	Conexion conexion;
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST ,headers="Accept=application/json")
+	@RequestMapping(value = "/singin", method = RequestMethod.POST ,headers="Accept=application/json")
 	public Usuario login(@RequestBody Usuario usuario) {
 		conexion.connect();		
 		if(usuario != null) {
@@ -37,6 +37,19 @@ public class PokedexRestController {
 		if(usuario != null) {
 			if (conexion.saveUsuario(usuario)) {
 				System.out.println("Se ha registrado"+usuario.getEmail());
+				conexion.close();
+				return true;
+			}
+		}
+		conexion.close();
+		return false;
+	}
+	
+	@RequestMapping(value = "/favorite", method = RequestMethod.POST ,headers="Accept=application/json")
+	public boolean favorite(@RequestBody Favorito fav) {
+		conexion.connect();
+		if(fav != null) {
+			if (conexion.saveFavoritePokemon(fav)) {				
 				conexion.close();
 				return true;
 			}
