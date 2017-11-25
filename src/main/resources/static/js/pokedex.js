@@ -9,11 +9,28 @@ var cantidadEv;
 window.onload = function() {
   document.getElementById('busqueda').style.display='none';
   document.getElementById('navProfile').style.display = "none";
+  document.getElementById('usuarioLogueado').style.display='none';
   RequestAutocompletar();
+  verificarCookie();
 }
 function FocusBuscardo() {
   document.getElementById('resultadoBusqueda').focus();
 }
+
+function verificarCookie(){
+	if(document.cookie.length>0){
+		document.getElementById("usuarioLogueado").innerHTML = document.cookie.split(",")[1];
+    document.getElementById('navProfile').style.display='block';
+    document.getElementById('navSigin').style.display='none';
+	}else{
+    document.getElementById('navProfile').style.display='none';
+    document.getElementById('navSigin').style.display='block';
+		location.href = "pokedex.html"
+	}
+}
+
+verificarCookie();
+setInterval(function(){verificarCookie()},1000);
 
 ///////////////////////////////Buscador///////////////////////////////////////
 function RequestAutocompletar() {

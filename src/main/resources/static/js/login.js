@@ -24,7 +24,7 @@ document.getElementById('loginForm').onsubmit = function(e){
     			  document.getElementById('errores').style.display = "block";
     		  }else{
     			  var date = new Date();
-    			  date.setTime(date.getTime()+(3*60*1000));
+    			  date.setTime(date.getTime() + (15 * 1000));
     			  var expires = "; expires="+date.toGMTString();
     			  document.cookie = "usuarioLogueado="+[respuesta.id,respuesta.name,respuesta.email]+expires;
     	      location.href= "../pokedex.html";
@@ -56,7 +56,7 @@ document.getElementById('registroForm').onsubmit = function(e){
       var respuesta = JSON.parse(this.responseText);
       if (respuesta) {
         var date = new Date();
-        date.setTime(date.getTime()+(3*60*1000));
+        date.setTime(date.getTime() + (15 * 1000));
         var expires = "; expires="+date.toGMTString();
         document.cookie = "usuarioLogueado="+[respuesta.id,respuesta.name,respuesta.email]+expires;
         location.href= "../pokedex.html";
