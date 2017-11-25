@@ -111,7 +111,7 @@ public class Conexion {
 				st.setString(2, usuario.getName());
 				st.setString(3, usuario.getGender());
 				st.setString(4, usuario.getPass());
-				st.execute();
+				st.execute();				
 				return true;
 			}else {
 				System.out.println("Usuario ya existe");
