@@ -11,21 +11,20 @@ window.onload = function() {
   document.getElementById('navProfile').style.display = "none";
   document.getElementById('usuarioLogueado').style.display='none';
   RequestAutocompletar();
-  verificarCookie();
 }
 function FocusBuscardo() {
   document.getElementById('resultadoBusqueda').focus();
 }
 
 function verificarCookie(){
-	if(document.cookie.length>0){
-		document.getElementById("usuarioLogueado").innerHTML = document.cookie.split(",")[1];
-    document.getElementById('navProfile').style.display='block';
-    document.getElementById('navSigin').style.display='none';
-	}else{
+	if(document.cookie.length==0){
     document.getElementById('navProfile').style.display='none';
     document.getElementById('navSigin').style.display='block';
-		location.href = "pokedex.html"
+    location.href = "pokedex.html"
+	}else{
+    document.getElementById("usuarioLogueado").innerHTML = document.cookie.split(",")[1];
+    document.getElementById('navProfile').style.display='block';
+    document.getElementById('navSigin').style.display='none';
 	}
 }
 
