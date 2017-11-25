@@ -14,9 +14,9 @@ public class PokedexRestController {
 	@Autowired
 	Conexion conexion;
 	
-	@RequestMapping(value = "/singin", method = RequestMethod.POST ,headers="Accept=application/json")
+	@RequestMapping(value = "/sigin", method = RequestMethod.POST ,headers="Accept=application/json")
 	public Usuario login(@RequestBody Usuario usuario) {
-		conexion.connect();		
+		conexion.connect();
 		if(usuario != null) {
 			Usuario user = conexion.findByCorreo(usuario.getEmail());
 			if(user != null) {
@@ -62,10 +62,22 @@ public class PokedexRestController {
 	
 	@RequestMapping( value="/favorites/{idUsuario}", method = RequestMethod.GET)
 	public ArrayList<Favorito> allFavorites(@PathVariable int idUsuario) {
+		ArrayList<Favorito> favoritos = null;
 		conexion.connect();
-		ArrayList<Favorito> favoritos = conexion.favoritos(idUsuario);		
+		if (conexion.exitisByIdUser(idUsuario)) {
+			favoritos = conexion.favoritos(idUsuario);						
+		}		
 		conexion.close();
 		return favoritos;
+	}
+	
+	@RequestMapping( value="/first", method = RequestMethod.GET)
+	public Usuario first() {
+		Usuario user = null;
+		conexion.connect();
+		user = conexion.primerUser();
+		conexion.close();
+		return user;
 	}
 
 }
