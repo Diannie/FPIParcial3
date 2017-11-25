@@ -21,24 +21,23 @@ public class PokedexRestController {
 		return user;
 	}
 
-	@RequestMapping(value="/saveFavorite", method = RequestMethod.POST, headers="Accept=application/json")
-	public void agregarFavoritos(@RequestBody ArrayList<Object> arreglo) {
-		conexion.connect();
-		conexion.saveFavoritePokemon(Integer.parseInt(arreglo.get(0).toString()),
-				(Integer.parseInt(arreglo.get(1).toString())));
-		conexion.close();
-		
-	}
+	//@RequestMapping(value="/saveFavorite", method = RequestMethod.POST, headers="Accept=application/json")
+	//public void agregarFavoritos(@RequestBody ArrayList<Object> arreglo) {
+	//	conexion.connect();
+	//	conexion.saveFavoritePokemon(Integer.parseInt(arreglo.get(0).toString()),
+	//			(Integer.parseInt(arreglo.get(1).toString())));
+	//	conexion.close();		
+	//}
 
 	@RequestMapping(value = "/logIn", method = RequestMethod.POST, headers="Accept=application/json")
 	public Usuario loguearse(@RequestBody Usuario usuario) {
 		conexion.connect();
-		Usuario user = conexion.buscarUsuarioByCorreo(usuario.getEmail());
+		Usuario user = conexion.findByCorreo(usuario.getEmail());
 		if(user != null) {
-			if(!user.getContrasena().equals(usuario.getContrasena())) {
-				System.out.println("-"+user.getContrasena()+"-");
-				System.out.println("-"+usuario.getContrasena()+"-");
-				user = new Usuario(null,null,null,null);
+			if(!user.getPass().equals(usuario.getPass())) {
+				System.out.println("-"+user.getPass()+"-");
+				System.out.println("-"+usuario.getPass()+"-");
+				user = null;
 			}
 		}else {
 			//user = new Usuario(null,null,null,null);
