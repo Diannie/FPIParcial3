@@ -35,9 +35,9 @@ public class Conexion {
 			Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
-	
+
 	public Usuario primerUser(){
-		Usuario user = null;		
+		Usuario user = null;
 		try{
 			PreparedStatement st = connect.prepareStatement("SELECT * FROM usuarios WHERE idUsuario=?");
 			st.setInt(1, 1);
@@ -67,7 +67,7 @@ public class Conexion {
 			return null;
 		}
 	}
-	
+
 	public boolean exitisByIdUser(int idUsuario){
 		Usuario user = null;
 		try{
@@ -80,19 +80,16 @@ public class Conexion {
 			if (user != null) {
 				if (user.getId()==idUsuario) {
 					System.out.println("Usuario encontrado");
-					return true;					
-				}				
-			}			
+					return true;
+				}
+			}
 		}catch(SQLException ex){
-			System.err.println(ex.getMessage());			
+			System.err.println(ex.getMessage());
 		}
 		System.out.println("Usuario No encontrado");
 		return false;
 	}
-	
-	
-	
-	
+
 	public Usuario logIn(String email, String contrasena) {
 		Usuario user = findByCorreo(email);
 		if(user != null) {
@@ -111,7 +108,7 @@ public class Conexion {
 				st.setString(2, usuario.getName());
 				st.setString(3, usuario.getGender());
 				st.setString(4, usuario.getPass());
-				st.execute();				
+				st.execute();
 				return true;
 			}else {
 				System.out.println("Usuario ya existe");
@@ -131,7 +128,7 @@ public class Conexion {
 					st.setInt(2, fav.getIdPokemon());
 					st.setString(3, fav.getNombrePokemon());
 					st.setString(4, fav.getUrlPokemon());
-					st.execute();			
+					st.execute();
 					System.out.println("Se ha agregado el pokemon a favoritos");
 					return true;
 				}else {
@@ -144,6 +141,7 @@ public class Conexion {
 		System.out.println("No se pudo guardar poekmon");
 		return false;
 	}
+
 	public boolean findFavoriteBy(int idUsuario, int idPokemon) {
 		Favorito fav = null;
 		try{
@@ -155,20 +153,20 @@ public class Conexion {
 			while (rs.next()) {
 				fav = new Favorito(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getString(5));
 			}
-			
+
 			if (fav.getIdUsuario()==idUsuario && fav.getIdPokemon()==idPokemon) {
 				System.out.println("Pokemon Encontrado");
 				return true;
 			}
 		}catch(SQLException ex){
-			System.err.println(ex.getMessage());			
+			System.err.println(ex.getMessage());
 		}
 		System.out.println("Pokemon No Encontrado");
 		return false;
 	}
-	
+
 	public void removeFavoritePokemon(int idUsuario, int idPokemon) {
-		try {			
+		try {
 			PreparedStatement st = connect.prepareStatement("delete from favoritos where idUsuario=? and idPokemon=?");
 			st.setInt(1, idUsuario);
 			st.setInt(2, idPokemon);
@@ -177,7 +175,7 @@ public class Conexion {
 			System.err.println(ex.getMessage());
 		}
 	}
-	
+
 	public ArrayList<Favorito> favoritos(int idUsuario){
 		ArrayList<Favorito> temp = new ArrayList<>();
 		try {
