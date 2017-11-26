@@ -18,9 +18,12 @@ function FocusBuscardo() {
 
 function verificarCookie(){
 	if(document.cookie.length==0){
+	document.getElementById('divFavorito').style.display='none';
     document.getElementById('navProfile').style.display='none';
     document.getElementById('navSigin').style.display='block';
+    
 	}else{
+	document.getElementById('divFavorito').style.display='block';
     document.getElementById("usuarioLogueado").innerHTML = document.cookie.split(",")[1];
     document.getElementById('navProfile').style.display='block';
     document.getElementById('navSigin').style.display='none';
@@ -188,7 +191,7 @@ function LlenarConEnter(e) {
 
     if (Existe(pokemons, pokebuscado)) {
       Limpiar();
-      document.getElementById('sinBusqueda').innerHTML="";
+      document.getElementById('sinBusqueda').innerHTML="<h1>Loading Pokemon...</h1>";
       document.getElementById('sinBusqueda').style.display='block';
       document.getElementById('sinBusqueda').style.backgroundImage = "url('../img/loading.gif')";
       var optionS = document.getElementsByName(pokebuscado);
@@ -247,7 +250,7 @@ function Limpiar(){
   evolutionArray = [];
   cantidadEv = 0;
   document.getElementById('sinBusqueda').style.display='none';
-  
+
 }
 
 //Comprueba si existe un valor en un vector

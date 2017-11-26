@@ -26,7 +26,7 @@ document.getElementById('loginForm').onsubmit = function(e){
     			  var date = new Date();
     			  date.setTime(date.getTime() + (180 * 1000));
     			  var expires = "; expires="+date.toGMTString();
-    			  document.cookie = "usuarioLogueado="+[respuesta.id,respuesta.name,respuesta.email]+expires;
+    			  document.cookie = "usuarioLogueado="+[respuesta.id,respuesta.name,respuesta.email,respuesta.gender]+expires;
     	      location.href= "../pokedex.html";
     		  }
     	  }else{
@@ -54,12 +54,13 @@ document.getElementById('registroForm').onsubmit = function(e){
   userRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var respuesta = JSON.parse(this.responseText);
+      
       if (respuesta) {
-        var date = new Date();
-        date.setTime(date.getTime() + (180 * 1000));
-        var expires = "; expires="+date.toGMTString();
-        document.cookie = "usuarioLogueado="+[respuesta.id,respuesta.name,respuesta.email]+expires;
-        location.href= "../pokedex.html";
+    	  var date = new Date();
+		  date.setTime(date.getTime() + (180 * 1000));
+		  var expires = "; expires="+date.toGMTString();
+		  document.cookie = "usuarioLogueado="+[respuesta.id,respuesta.name,respuesta.email,respuesta.gender]+expires;
+		  CargarSignin();
       }else{
         alert("Correo ya registrado");
       }
