@@ -13,7 +13,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Conexion {
-	private String url = "C:\\Users\\Merling\\Desktop\\FPIParcial3\\src\\main\\java\\com\\example\\demo\\pokedex.db";
+	private String url = "src\\main\\java\\com\\example\\demo\\pokedex.db";
+	//private String url = "C:\\Users\\Merling\\Desktop\\FPIParcial3\\src\\main\\java\\com\\example\\demo\\pokedex.db";
 	private Connection connect;
 
 	public void connect() {
