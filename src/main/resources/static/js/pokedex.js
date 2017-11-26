@@ -5,6 +5,14 @@ var pokemons = [];
 var idEvoluciones = [];
 var evolutionArray;
 var cantidadEv;
+var marcado = false;
+
+function changeStar() {
+  if (marcado==false) {
+    marcado = true;
+    document.getElementById('divFavorito').style.backgroundImage = "url('../img/yellowStar.png')";
+  }
+}
 
 window.onload = function() {
   document.getElementById('busqueda').style.display='none';
@@ -21,7 +29,7 @@ function verificarCookie(){
 	document.getElementById('divFavorito').style.display='none';
     document.getElementById('navProfile').style.display='none';
     document.getElementById('navSigin').style.display='block';
-    
+
 	}else{
 	document.getElementById('divFavorito').style.display='block';
     document.getElementById("usuarioLogueado").innerHTML = document.cookie.split(",")[1];
@@ -281,4 +289,24 @@ function EvolucionURL(idDeseado, areaDivEvoluciones, nombre){
 function RedireccionEvolucion(idDeseado) {
   Limpiar();
   requestPokemon(idDeseado);
+}
+/////////////////////////////////Agregar favorito///////////////////////////////////////
+
+function guardarFavorito() {
+  var obj = {"idFavorito": 0, "idUsuario": parseInt(document.cookie.split(",")[0].split("=")[1]), "idPokemon": parseInt(document.getElementById('pokeID').innerHTML), "nombrePokemon": document.getElementById('pokeNombre').innerHTML, "urlPokemon": document.getElementById('imagen').src};
+  console.log(obj);
+  var favRequest = new XMLHttpRequest();
+    favRequest.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         var respuesta = JSON.parse(this.responseText);
+         if (respuesta) {
+           changeStar();
+         }
+      }
+    };
+    favRequest.open('POST', '/favorite');
+    favRequest.setRequestHeader("Content-Type", "application/json");
+    favRequest.setRequestHeader("Accept", "application/json");
+    favRequest.send(JSON.stringify(obj));
+
 }

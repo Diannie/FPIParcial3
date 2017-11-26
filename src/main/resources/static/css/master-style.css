@@ -126,9 +126,6 @@
   background-image: url(../img/blackStar.png);
 }
 
-.div-favorite-star:hover{
-  background-image: url(../img/yellowStar.png);
-}
 .main-body-pokedex{
   position: relative;
   top: 2vw;
