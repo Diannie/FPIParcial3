@@ -20,7 +20,6 @@ function verificarCookie(){
 	if(document.cookie.length==0){
     document.getElementById('navProfile').style.display='none';
     document.getElementById('navSigin').style.display='block';
-    location.href = "pokedex.html"
 	}else{
     document.getElementById("usuarioLogueado").innerHTML = document.cookie.split(",")[1];
     document.getElementById('navProfile').style.display='block';
@@ -176,6 +175,7 @@ function Pokeinfo() {
   }
 
   //Muestra el div de la busqueda
+  document.getElementById('sinBusqueda').style.display='none';
   document.getElementById('busqueda').style.display='block';
 }
 
@@ -188,7 +188,9 @@ function LlenarConEnter(e) {
 
     if (Existe(pokemons, pokebuscado)) {
       Limpiar();
-      document.getElementById('sinBusqueda').style.display='none';
+      document.getElementById('sinBusqueda').innerHTML="";
+      document.getElementById('sinBusqueda').style.display='block';
+      document.getElementById('sinBusqueda').style.backgroundImage = "url('../img/loading.gif')";
       var optionS = document.getElementsByName(pokebuscado);
       var pokeidS = optionS[0].getAttribute('id');
       var pokeid = parseInt(pokeidS);
@@ -244,7 +246,8 @@ function Limpiar(){
   idEvoluciones = [];
   evolutionArray = [];
   cantidadEv = 0;
-  alert("The search is in process, please wait");
+  document.getElementById('sinBusqueda').style.display='none';
+  
 }
 
 //Comprueba si existe un valor en un vector
