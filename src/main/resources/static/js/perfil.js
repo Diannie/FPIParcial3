@@ -62,7 +62,8 @@ function GenerarDivFavoritos(divPrincipal, ruta, nombre, idDeseado) {
 }
 
 function Capturar(idDeseado) {
-  alert("El id de este pokemon es"+idDeseado);
+  localStorage.setItem("idProfileSearch", idDeseado);
+  location.href = "pokedex.html";
 }
 function LogOut() {
 	document.cookie = "usuarioLogueado=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";

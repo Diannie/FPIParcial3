@@ -13,12 +13,23 @@ function changeStar() {
     document.getElementById('divFavorito').style.backgroundImage = "url('../img/yellowStar.png')";
   }
 }
-
+function LoadingPokemon() {
+  document.getElementById('sinBusqueda').innerHTML="<h1>Loading Pokemon...</h1>";
+  document.getElementById('sinBusqueda').style.display='block';
+  document.getElementById('sinBusqueda').style.backgroundImage = "url('../img/loading.gif')"
+}
 window.onload = function() {
   document.getElementById('busqueda').style.display='none';
   document.getElementById('navProfile').style.display = "none";
   document.getElementById('usuarioLogueado').style.display='none';
   RequestAutocompletar();
+  //Si se realiza una busqueda desde el perfil
+  if (localStorage.idProfileSearch !== undefined) {
+    LoadingPokemon();
+    requestPokemon(parseInt(localStorage.idProfileSearch));
+    localStorage.removeItem("idProfileSearch");
+  }
+
 }
 function FocusBuscardo() {
   document.getElementById('resultadoBusqueda').focus();
@@ -188,6 +199,13 @@ function Pokeinfo() {
   //Muestra el div de la busqueda
   document.getElementById('sinBusqueda').style.display='none';
   document.getElementById('busqueda').style.display='block';
+  marcado=false;//Con rest buscar si ya lo tiene marcado o no
+  if (marcado) {
+    document.getElementById('divFavorito').style.backgroundImage = "url('../img/yellowStar.png')";
+  }else {
+    document.getElementById('divFavorito').style.backgroundImage = "url('../img/blackStar.png')";
+  }
+
 }
 
 ///////////////////////////////////Funcionalidades//////////////////////////////
@@ -199,9 +217,7 @@ function LlenarConEnter(e) {
 
     if (Existe(pokemons, pokebuscado)) {
       Limpiar();
-      document.getElementById('sinBusqueda').innerHTML="<h1>Loading Pokemon...</h1>";
-      document.getElementById('sinBusqueda').style.display='block';
-      document.getElementById('sinBusqueda').style.backgroundImage = "url('../img/loading.gif')";
+      LoadingPokemon();
       var optionS = document.getElementsByName(pokebuscado);
       var pokeidS = optionS[0].getAttribute('id');
       var pokeid = parseInt(pokeidS);
@@ -258,7 +274,7 @@ function Limpiar(){
   evolutionArray = [];
   cantidadEv = 0;
   document.getElementById('sinBusqueda').style.display='none';
-
+  window.scrollTo(0, 0);
 }
 
 //Comprueba si existe un valor en un vector

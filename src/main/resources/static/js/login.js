@@ -20,7 +20,7 @@ document.getElementById('loginForm').onsubmit = function(e){
     	  if (this.responseText!="") {
     		  var respuesta = JSON.parse(this.responseText);
     		  if(respuesta.id===null){
-    			  document.getElementById('errores').value = "Contraseña o Correo incorrectos";
+    			  document.getElementById('errores').value = "email or password incorrect";
     			  document.getElementById('errores').style.display = "block";
     		  }else{
     			  var date = new Date();
@@ -30,8 +30,8 @@ document.getElementById('loginForm').onsubmit = function(e){
     	      location.href= "../pokedex.html";
     		  }
     	  }else{
-    		  document.getElementById('errores').value = "Contraseña o Correo incorrectos";
-			  document.getElementById('errores').style.display = "block";
+      		  document.getElementById('errores').value = "email or password incorrect";
+  			    document.getElementById('errores').style.display = "block";
     	  }
 
       }
@@ -54,7 +54,7 @@ document.getElementById('registroForm').onsubmit = function(e){
   userRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var respuesta = JSON.parse(this.responseText);
-      
+
       if (respuesta) {
     	  var date = new Date();
 		  date.setTime(date.getTime() + (180 * 1000));
