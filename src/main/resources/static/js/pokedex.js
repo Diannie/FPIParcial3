@@ -89,6 +89,7 @@ function requestPokemon(pokeid) {
     pokemon = JSON.parse(this.responseText);
     var urlSpecies = pokemon.species.url;
     requestSpecies(urlSpecies);
+
   }
   };
   xhttp.open("GET", "https://pokeapi.co/api/v2/pokemon/"+pokeid, true);
@@ -114,6 +115,7 @@ function requestEvolution(urlEvolution) {
   if (this.readyState == 4 && this.status == 200) {
     evolucion = JSON.parse(this.responseText);
     Pokeinfo();
+
   }
   };
   xhttp.open("GET", urlEvolution, true);
@@ -199,9 +201,8 @@ function Pokeinfo() {
   //Muestra el div de la busqueda
   document.getElementById('sinBusqueda').style.display='none';
   document.getElementById('busqueda').style.display='block';
-  marcado=false;//Con rest buscar si ya lo tiene marcado o no
-  if (marcado) {
-    document.getElementById('divFavorito').style.backgroundImage = "url('../img/yellowStar.png')";
+  if(document.cookie.length!=0){
+    VerificarFavorito(pokemon.id);
   }else {
     document.getElementById('divFavorito').style.backgroundImage = "url('../img/blackStar.png')";
   }
@@ -274,6 +275,7 @@ function Limpiar(){
   evolutionArray = [];
   cantidadEv = 0;
   document.getElementById('sinBusqueda').style.display='none';
+  document.getElementById('divFavorito').style.backgroundImage = "url('../img/blackStar.png')";
   window.scrollTo(0, 0);
 }
 
@@ -325,4 +327,25 @@ function guardarFavorito() {
     favRequest.setRequestHeader("Accept", "application/json");
     favRequest.send(JSON.stringify(obj));
 
+}
+function VerificarFavorito(id) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+  if (this.readyState == 4 && this.status == 200) {
+    pokemonsFavoritos = JSON.parse(this.responseText);
+    marcado = false;
+    for (var i in pokemonsFavoritos) {
+      if (pokemonsFavoritos[i].idPokemon == parseInt(id)) {
+        marcado = true;
+      }
+    }
+    if (marcado) {
+      document.getElementById('divFavorito').style.backgroundImage = "url('../img/yellowStar.png')";
+    }else {
+      document.getElementById('divFavorito').style.backgroundImage = "url('../img/blackStar.png')";
+    }
+  }
+  };
+  xhttp.open("GET", "/favorites/"+parseInt(document.cookie.split(",")[0].split("=")[1]), true);
+  xhttp.send();
 }
